@@ -1,0 +1,52 @@
+<%-- 
+    Document   : Orderselected
+    Created on : 2014-10-8, 19:35:53
+    Author     : rjg
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title></title>
+
+    </head>
+    <body>
+    <center>
+        
+                                               <!--
+                                                 <a> 日期选择：</a>
+                                               <input type="text" id="j_Date2" class="input"  onclick="Calender()"/>
+                                                <script>   var myDate2 = new Calender({id:'j_Date2',isSelect:!0}); </script>
+                                                -->
+                                               <a>房间号：</a>
+                                                <select id="number">
+                                                        <option value="501" onclick="" selected="selected">501</option>
+                                                        <option value="502" onclick="">502</option>
+                                                        <option value="503" onclick="">503</option>
+                                                      
+                                                </select>
+                                               <!--
+                                               <a>姓名：</a>
+                                                <input type="text" id="name" />
+                                               --->
+                                               
+                                                <a>预约选择：</a>
+                                                 <select id="order">
+                                                        <option value="0" onclick="" selected="selected">未处理预约</option>
+                                                        <option value="1" onclick="">已经允许的预约</option>
+                                                        <option value="2" onclick="">已经拒绝的预约</option>
+                                                      
+                                                </select>
+                                                
+                                               <button id="select" onclick="select()">查询</button>
+                                               <br>
+                                               <div id="present"></div>
+                             <br>
+                                            
+       
+    </center>
+    </body>
+</html>

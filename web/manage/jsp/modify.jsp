@@ -32,8 +32,8 @@
                              array[i][0]=ret.getString("number");
                              array[i][1]=ret.getString("size");
                              array[i][2]=ret.getString("peonum");
-                            // out.println("<td>"+ret.getArray("number")+"</td><td>"+ret.getArray("size")+"</td><td>"+ret.getArray("peonum")+"</td>");
-                             //out.println(ret.getArray(columnLabel));
+                             array[i][3]=ret.getString("discri");
+                             array[i][4]=ret.getString("mnum");
                            i++;
                          }
              }

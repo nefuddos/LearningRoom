@@ -21,15 +21,6 @@ import newpackage.Test;
  */
 public class DelRoom extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -41,9 +32,6 @@ public class DelRoom extends HttpServlet {
            String str="delete from roomtable where number='"+data[i][0]+"' ";
         
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            
-            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -51,8 +39,6 @@ public class DelRoom extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
              out.println("<center>");
-               //out.println(data[i][0]+" "+people+" "+size);
-               
            try{
            Test DBconnect1 =new Test();
            int n=DBconnect1.exeU(str);

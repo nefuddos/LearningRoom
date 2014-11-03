@@ -14,13 +14,14 @@
  
     </head>
      <%
+           request.setCharacterEncoding("UTF-8");
            int i=Integer.parseInt(request.getParameter("i"));
             String[][]  data  =  (String[][])session.getAttribute("table_number");
             String peopleStr=(String)data[i][2];
             int people= Integer.parseInt(peopleStr);
              String sizeStr=(String)data[i][2];
             int size= Integer.parseInt(sizeStr);
-             session.removeAttribute("table_number");
+          //  session.removeAttribute("table_number");
      %>
     <body>
         <h3>修改学习间信息</h3>

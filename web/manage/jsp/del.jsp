@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>学习间基本信息修改</title>
+        <title></title>
     </head>
      <jsp:useBean id="modify" class="newpackage.Test"  scope="page" />
     <body>

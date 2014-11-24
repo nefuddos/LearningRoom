@@ -123,7 +123,12 @@ function backpack()
                 }
             
         }
-        
+function singleClick(){
+       // $("#result1").html("");
+    $("#content").html("");
+    $("#result2").html("");
+    $("#result1").load("jsp/personal/person.jsp");
+}
         
         
 

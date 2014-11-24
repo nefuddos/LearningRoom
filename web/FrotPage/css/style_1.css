@@ -16,7 +16,7 @@ a.button{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;font
 .red:hover{ background-color:#d96060;}
 .green:hover{ background-color:#69b736;}
 
-#panelwrap{width:1071px; height: 1000px; margin:20px auto; background-color:#FFFFFF;-moz-border-radius:10px;-webkit-border-radius:10px;-khtml-border-radius:10px; border-radius:10px;border:6px #c0cdd2 solid; }
+#panelwrap{width:1071px; height: 613px; margin:20px auto; background-color:#FFFFFF;-moz-border-radius:10px;-webkit-border-radius:10px;-khtml-border-radius:10px; border-radius:10px;border:6px #c0cdd2 solid; }
 #loginpanelwrap{width:500px; margin:120px auto auto auto; background-color:#FFFFFF;-moz-border-radius:10px;-webkit-border-radius:10px;-khtml-border-radius:10px; border-radius:10px;border:6px #c0cdd2 solid;}
 
 .header{ width:100%;
@@ -28,8 +28,8 @@ a.button{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;font
 
 .usernameid{
     color: #DCEEF7;
-    padding: 0px 0px 0px 831px;
-    font-size: 25px;
+    padding: 0px 0px 0px 935px;
+    font-size: 19px;
 };
 
 .title{ font-size:26px; float:left; padding:25px 0 0 18px;}
@@ -83,7 +83,7 @@ a.button{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;font
     padding:10px 0 0 0px;
     position:relative;
     left:0px;
-    height: 233px;
+    height: 466px;
     float:right;
     font-size: 20px;
 }
@@ -105,20 +105,25 @@ a.button{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;font
     font-size: 15px;
 };
 .sidebar ul{
-    background-color:#FFFFFF; list-style:none;
-    width:170px; border:1px #D6D6D6 solid; border-top:none;
+    background-color:#FFFFFF; 
+    width:170px; border-top:none;
     padding:10px 15px 15px 15px; margin:0px 0 15px 10px;
+     display: inline;
 
 }
 .sidebar ul li{
     border-bottom:1px #ededed solid; 
-
+    padding-left: 0px;
 }
 .sidebar ul li a{
-    color:#000000; display:block;padding:10px 0px 0px 7px;
+    color:#000000; display:block;padding:10px 0px 0px 1px;
 }
 .sidebar ul li a:hover{
     background-color:#69b736;
+    margin-right: 6px;
+    padding-left: 30px;
+    -moz-border-radius-bottomleft:6px;-webkit-border-bottom-left-radius:6px;-khtml-border-bottom-left-radius:6px;border-bottom-left-radius:6px;
+    -moz-border-radius-bottomright:6px;-webkit-border-bottom-right-radius:6px;-khtml-border-bottom-right-radius:6px;border-bottom-right-radius:6px;
 }
 .sidebar_section_text{
     background-color:#FFFFFF;
@@ -145,7 +150,7 @@ a.button{-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;font
     border-bottom:1px #ABC7D6 solid;
 }
 #share{
-    margin:61px 0 0 15px;
+    margin:243px 0 0 15px;
     color:  #69b736;
 };
 #rounded-corner

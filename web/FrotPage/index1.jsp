@@ -42,7 +42,7 @@
                 %>
                 <div class="usernameid">
 
-                    你好,<a href="./jsp/login1.jsp">请登录</a>
+                    <a href="./jsp/login1.jsp">登录</a>
 
                 </div>
                 <%
@@ -53,7 +53,7 @@
                     姓名：<%=name%> 
                 </p>
                 <p id="big3">
-                    <a href="jsp/personal/person.jsp">个人预约查询</a>
+                    <a onclick="singleClick()">个人预约查询</a>
                 </p>
                 <p  id="big2">
                     <a href="./jsp/logoutjsp.jsp"> &nbsp;退出</a> 

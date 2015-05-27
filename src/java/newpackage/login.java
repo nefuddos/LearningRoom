@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+import MDT.MD5Util;
 /**
  *
  * @author rjg
@@ -41,7 +41,9 @@ public class login extends HttpServlet {
         
            //获取表单中提取的用户名和密码   
             String user=request.getParameter("name");
-            String passw=request.getParameter("passw");
+           // String passw=request.getParameter("passw");
+              String passw_temp=request.getParameter("passw");
+              String passw = MD5Util.MD5(passw_temp);         //MD5加密
           try{
              Test DBconnect =new Test();
               ResultSet Re=null;

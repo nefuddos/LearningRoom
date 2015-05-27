@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import newpackage.Test;
-
+import MDT.MD5Util;
 /**
  *
  * @author rjg
@@ -32,9 +32,11 @@ public class UpdateIfo extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String passw=request.getParameter("passw");
+      //  String passw=request.getParameter("passw");
+              String passw_temp=request.getParameter("passw");
+              String passw = MD5Util.MD5(passw_temp);         //MD5加密
         String str="update managertb set password= '"+passw+"'";
-        System.out.print(passw);
+     //   System.out.print(passw);
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
              try{

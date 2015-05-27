@@ -14,8 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-
+import MDT.MD5Util;
 /**
  *
  * @author rjg
@@ -39,18 +38,23 @@ public class StudentTest extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
            request.setCharacterEncoding("UTF-8");
            String user=request.getParameter("name");
-            String passw=request.getParameter("passw");
-            System.out.printf("user: "+user+"\n"+"passw: "+passw);
+            String passw_temp=request.getParameter("passw");
+            String passw = MD5Util.MD5(passw_temp);         //MD5加密
+          // String passw = request.getParameter("passw");
+            //System.out.printf("user: "+user+"\n"+"passw: "+passw);
              try{
              Test DBconnect =new Test();
               ResultSet Re=null;
-             String str="select *from student where name='"+user+"' and stunum='"+passw+"'";
-            
+             String str="select DZPSD from user where DZXM='"+user+"'";
+             
              Re=DBconnect.exeQ(str);
            
              
              if(Re.next()==true)
              {
+                 String tempp = Re.getString("DZPSD");
+                 if((tempp.equals(passw_temp)) ||(tempp.equals(passw)))
+                 {
                  out.print("登录成功");
                  HttpSession session=request.getSession(true);
                  session.setAttribute("user", user);
@@ -59,7 +63,12 @@ public class StudentTest extends HttpServlet {
                  
                  response.setStatus(200);
                  //response.sendRedirect("/LearningRoom/FrotPage/jsp/newjsp.jsp");
-                 
+                 }
+                 else
+                 {
+                //  System.out.println("用户名或则密码错误,错误用户和密码为："+user+" \npassw:"+passw+"\ntempp:"+tempp+"\npassw_temp:"+passw_temp);
+                  response.setStatus(404);
+                 }
              }
              else
              {

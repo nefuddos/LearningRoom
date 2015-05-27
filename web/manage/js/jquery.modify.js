@@ -124,8 +124,36 @@ function notify(){
     }
 }
 function notify_submit(){
-   
+}
+function show(id,i){
+        //alert(id + " " +i);
+         var params="id="+id+"&sum="+i; 
+         //alert(params);
+         $("#result_down").load("./jsp/OrderselectNextPage.jsp?",params,callback1);
+}
+
+function deal(id,status)
+{
+    if(status === 1)
+    {
+       //$(document).ready(function(){
+            //$(".parent .hide").click(function(){
+           // $(this).parents(".ex").hide("slow");
+           // });
+              //$(this).parent(".pa").children(".child2").hide("slow");
+             // $(this).parent(".pa").load("/LearningRoom/OrderSelect?i=id&params=1",callback1);
+              //alert(status);
+              $(this).hide(slow);
+       //  });
+    }
     
+    else if(status === 2)
+    {
+        //$(this).parents(".child2").hide("slow");
+        //  $(this).parent(".pa").load("/LearningRoom/OrderSelect?i=id&params=2",callback1);
+          $(this).hide(slow);
+         //alert(status);
+    }
 }
 
 

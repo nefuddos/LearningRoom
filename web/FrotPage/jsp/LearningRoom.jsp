@@ -11,13 +11,13 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
         <title></title>
-
     </head>
     <body>
     <center>
                                                  <a> 日期选择：</a>
                                                <input type="text" id="j_Date2" class="input"  onclick="Calender()"/>
-                                                <script>   var myDate2 = new Calender({id:'j_Date2',isSelect:!0}); </script>
+                                                <script>   var myDate2 = new Calender({id:'j_Date2',isSelect:!0});
+                                                </script>
                                                 
                                                <a>时间选择：</a>
                                                 <select id="time">

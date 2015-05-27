@@ -14,6 +14,10 @@
             function gohome(){
                 location.href="/LearningRoom/FrotPage/index1.jsp";
             }
+            function check(){
+                if($('#nameid') === null )
+                    gohome();
+            }
         </script>
     </head>
     <body>
@@ -43,14 +47,16 @@
                                                       <td><%=data[i][2]%></td>
                                                       <td><%=date%></td>
                                                       <td><%=time%></td>
-                                                      <td><%=username%></td>
+                                                      <td id="nameid"><%=username%></td>
                                                   </tr>
                                                    
         </table>
                                                  
-                                                  预约原因： <input type="text" name="reason" />
+                                                  预约原因：
+                                                  <textarea name="reason" rows="4" cols="40"></textarea><br/>
+                                                  
                                                   <input type="reset" value="返回" onclick="gohome()">
-                                                  &nbsp;&nbsp;<input type="submit" value="提交" />
+                                                  &nbsp;&nbsp;<input type="submit" value="提交"  onclick="check()"/>
         </center>
         </form>
     </body>

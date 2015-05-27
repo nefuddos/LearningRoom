@@ -49,7 +49,7 @@ public class FormIfo extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
+            out.println("<title></title>");            
             out.println("</head>");
             out.println("<body>");
              out.println("<center>");

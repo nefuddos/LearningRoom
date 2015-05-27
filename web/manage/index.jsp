@@ -72,12 +72,13 @@ $(".trigger").click(function(){
             <li><a onclick="add()">增加</a></li>
             <li><a onclick="del()" >删除</a></li>
         </ul> 
-        
+     <!---
     <h2>通知通告</h2>
     
         <ul>
             <li><a onclick="notify()">通知管理</a></li>
-        </ul>   
+        </ul>
+     -->
     </div>             
     
     

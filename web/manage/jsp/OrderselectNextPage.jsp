@@ -1,9 +1,8 @@
 <%-- 
-    Document   : Orderselect
-    Created on : 2014-9-10, 20:28:51
+    Document   : OrderselectNextPage
+    Created on : 2015-2-24, 18:32:11
     Author     : rjg
 --%>
-<%@ page import="java.sql.*" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,62 +10,26 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
     </head>
-     <jsp:useBean id="orderselect" class="newpackage.Test"  scope="page" />
-   
-         <%
-             String number,name;
-           request.setCharacterEncoding("UTF-8");
-           number=request.getParameter("number");
-         //  name=request.getParameter("name");
-           int order =Integer.parseInt(request.getParameter("order"));
-           
-       
-             String str="select *from subscrible where number = '"+number+"' and flag = '"+order+"' ";
-             ResultSet ret=null;
-              String [][]array = new String[10000][10];
-              int []flag = new int[100];
-              int i=0;
-             ret=orderselect.exeQ(str);
-             
-            
-             if(ret==null)
-                 out.print("没有数据");
-             else
-             {
-                         while(ret.next()==true)
-                         {
-                             array[i][0]=ret.getString("number");//房间编号
-                             array[i][1]=ret.getString("name");//预约者的姓名
-                             array[i][2]=ret.getString("date");//预约日期
-                             array[i][3]=ret.getString("time");//预约时间
-                             array[i][4]=ret.getString("reason");//预约原因
-                             flag[i]=ret.getInt("flag"); //预约状态 0表示处于审核状态，1,表示允许，2,表示拒绝
-                             i++;
-                             if(i>=10000)
-                             {
-                                 out.println("已经达到最大的查询记录");
-                             }
-                         }
-                         session.setAttribute("Room_table", array);
-                         session.setAttribute("flag", flag);
-             }
-              
-             orderselect.closeCL();
-             orderselect.closeRs();
-             orderselect.closeSM();
-         %>
-         
     <body>
-        <center> 
+       <%
+           String [][]array = new String[50000][10];
+           int []flag = new int[50000];
+           int id  = Integer.parseInt(request.getParameter("id"));
+           int sum  = Integer.parseInt(request.getParameter("sum"));
+           int begin = id*10,end = (id+1)*10 <sum?((id+1)*10):sum;
+           array = (String [][])session.getAttribute("Room_table");
+           flag = (int [])session.getAttribute("flag");
+           %>
+           <center> 
             <table class="table_ifo" border=2>
                          
                           <tr>
                               <td>房间编号</td><td>预约姓名</td><td>预约日期</td><td>预约时间</td><td>预约原因</td><td>是否允许预约</td>
                           </tr>
-                          <% if(i!=0)
-                          {
-                              int page_num =i/10;
-                              int begin = 0,end = page_num <1?i:10;
+                          <%
+                          
+                              int page_num =sum/10;
+                            //  int begin = 0,end = page_num <1?sum:10;
                               int j;
                                 for(j=begin;j<end;j++)
                                 {
@@ -96,15 +59,12 @@
                                 }
                                
                                 int tag=0;
-                                int k=0;
-                                
-                                for(k=0;k<=page_num;k++)
+                                for(int k=0;k<=page_num;k++)
                                 {
                        
-                                    if(k<3 || k>=page_num-3)
+                                    if(k<id+3 || k>=page_num-3)
                                     {
-
-                                        out.write("<a onclick = show("+k+","+i+")>["+(k+1)+"]</a>&nbsp");
+                                         out.write("<a onclick = show("+k+","+sum+")>["+(k+1)+"]</a>&nbsp");
                                     }
                                     else{
                                         if(tag == 0)
@@ -112,15 +72,11 @@
                                         tag = 1;
                                     }
                                 }
-                          }
-                          else
-                          {
-                              %>
-                              没有信息
-                              <%
-                          }
+                          
                           %>
             </table>              
      </center>
+           
+      
     </body>
 </html>

@@ -72,37 +72,25 @@
                  e.printStackTrace();
             }
           
-         %>
-         
-        <!-- 信息显示  -->
-        <center>
-           <form id="form_sub">
-               <table class="table_ifo">
-                                                  <tr>
-                                                     <td>房间编号</td>
-                                                      <td>房间大小(m^2)</td>
-                                                      <td>容纳人数(人)</td>
-                                                      <td>房间描述</td>
-                                                      <td>管理员电话</td>
-                                                  </tr>
-                                                  <%
                                                          int j;
                                                          for(j=0;j<i;j++)
                                                          {
                                                        %>
-                                                       <tr>
-                                                           <td><input  type="button" value="<%=array[j][0]%>" /></td> 
-                                                           <td><input type="button" value="<%=array[j][1]%>" /></td> 
-                                                           <td><input type="button" value="<%=array[j][2]%>" /></td>
-                                                           <td><input  type="button" value="<%=array[j][3]%>" /></td> 
-                                                           <td><input  type="button" value="<%=array[j][4]%>" /></td> 
-                                                       </tr>
+                                                       <div id="total" style=" margin-left:2px;margin-top: 2px; background-color:  red; height: 120px; width: 210px; float: left;background-image: url(/LearningRoom/FrotPage/bgpicture/<%=array[j][0]%>.png)">
+                                                           <div id="pictureifo" style="">
+                                                          </div>
+                                                          <div id="room_iformation" style="margin-top: 62px">
+                                                              <ul>
+                                                                  <li>大小:&nbsp;<%=array[j][1]%>
+                                                                  容纳人数:&nbsp;<%=array[j][2]%></li>
+                                                                  <li>描述:&nbsp;<%=array[j][3]%>
+                                                                  管理员电话:&nbsp;<%=array[j][4]%></li>
+                                                              </ul>
+                                                          </div>
+                                                      </div>
                                                       <%
                                                          }
                                                       %>
-               </table>
- 
-  </form>
-               </center>
+                                                    
     </body>
 </html>

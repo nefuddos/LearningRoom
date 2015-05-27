@@ -30,9 +30,9 @@
   
          <%
              ResultSet ret=null;
-             String [][]array = new String[10][10];
+             String [][]array = new String[50000][10];
              int i=0;
-             int []flag = new int[10];
+             int []flag = new int[50000];
           try{
            
              
@@ -85,7 +85,11 @@
                                                   </tr>
                                                       <%
                                                          int j;
-                                                         for(j=0;j<i;j++)
+                                                         if(i>10)
+                                                             j=i-10;
+                                                         else
+                                                             j=0;
+                                                         for(;j<i;j++)
                                                          {
                                                              if(flag[j]==0)
                                                              {

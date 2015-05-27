@@ -23,9 +23,11 @@
                                                 -->
                                                <a>房间号：</a>
                                                 <select id="number">
-                                                        <option value="501" onclick="" selected="selected">501</option>
-                                                        <option value="502" onclick="">502</option>
-                                                        <option value="503" onclick="">503</option>
+                                                        <option value="507" onclick="" selected="selected">507</option>
+                                                        <option value="513" onclick="">513</option>
+                                                        <option value="514" onclick="">514</option>
+                                                        <option value="516" onclick="">516</option>
+                                                        <option value="517" onclick="">517</option>
                                                       
                                                 </select>
                                                <!--

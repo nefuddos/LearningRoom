@@ -19,12 +19,13 @@
     function verify(){
     var jqueryObj = $("#username");
     var jqueryobj1=$("#password");
-    //获得节点的值
+        //获得节点的值
     var username = jqueryObj.val();
     var password = jqueryobj1.val();
 
     var params="name="+username+"&passw="+password;
  $.ajax({
+     
      url: "/LearningRoom/StudentTest",
      async: false,
      data: params,
@@ -70,7 +71,7 @@ function callback(data){
     <div class="loginform">
         
         <div class="loginform_row">
-        <label> 用户名:</label>
+        <label> 学号</label>
         <input type="text" class="loginform_input"  id="username"/>
         </div>
         <div class="loginform_row">

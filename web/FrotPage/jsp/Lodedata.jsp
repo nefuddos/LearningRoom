@@ -35,7 +35,7 @@
   //sql语句
   
  // String yuju2="select number,size,peonum from roomtable,subscrible where('subscrible.date' <> 'date' | 'subscrible.time <> 'time')";
-  String yuju1="select number,size,peonum from roomtable where  number not in (select number from subscrible  where (date = '"+date+"' and time = '"+time+"') )";
+  String yuju1="select number,size,peonum,discri,mnum from roomtable where  number not in (select number from subscrible  where (date = '"+date+"' and time = '"+time+"') )";
   %>
    <jsp:useBean id="Lodedata" class="newpackage.Test"  scope="page" />
    
@@ -55,7 +55,8 @@
                              array[i][0]=(String)ret.getString("number");
                              array[i][1]=(String)ret.getString("size");
                              array[i][2]=(String)ret.getString("peonum");
-                      
+                             array[i][3] = (String)ret.getString("discri");
+                             array[i][4] = (String)ret.getString("mnum");
                              
                          //    out.print("<tr>");
                            //  out.println("<td>"+ret.getArray("number")+"</td><td>"+ret.getArray("size")+"</td><td>"+ret.getArray("peonum")+"</td><td><a href=\"jsp/form.jsp?i="+i+"\">预约</a></td>");
@@ -74,35 +75,38 @@
             {
                  response.setStatus(400, "数据库异常，稍后再试");
                  e.printStackTrace();
-            }
-         
-         %>
-         
-   <form id="form_sub">
-      
-
-           <table class="table_ifo">
-                                                  <tr>
-                                                     <td>房间编号</td>
-                                                      <td>房间大小(m^2)</td>
-                                                      <td>容纳人数(人)</td>
-                                                      <td>是否预约</td>
-                                                  </tr>
-                                                      <%
+            }     
                                                          int j;
                                                          for(j=0;j<i;j++)
                                                          {
                                                        %>
-                                                       <tr>
-                                                           <td><%=array[j][0]%></td> <td><%=array[j][1]%></td> <td><%=array[j][2]%></td><td><a href="jsp/form.jsp?i=<%=j%>">预约</a></td>
-                                                       </tr>
+                                                       <div onclick="buy(<%=j%>)" id="total" style=" margin-left:5px;margin-top: 2px; background-color: red; height: 120px; width: 210px; float: left;background-image: url(/LearningRoom/FrotPage/bgpicture/<%=array[j][0]%>.png)">
+                                                           <div id="pictureifo" style="">
+                                                          </div>
+                                                           <div id="room_iformation" style="margin-top: 62px">
+                                                              <ul>
+                                                                  <li>大小:&nbsp;<%=array[j][1]%>
+                                                                  容纳人数:&nbsp;<%=array[j][2]%></li>
+                                                                  <li>描述:&nbsp;<%=array[j][3]%>
+                                                                  管理员电话:&nbsp;<%=array[j][4]%></li>
+                                                              </ul>
+                                                          </div>
+                                                      </div>
                                                       <%
                                                          }
                                                       %>
 
-
-          </table>
-              
-  </form>
+                                                       <script>
+                                                          function buy(id)
+                                                          {
+                                                              var val = "你确定要预约该信息共享空间吗?";
+                                                             var sq =  confirm(val);
+                                                             if(sq === true)
+                                                             {
+                                                                 location.href ="jsp/form.jsp?i="+id;
+                                                             }
+                                                          }
+                                                      </script>
+             
     </body>
 </html>
